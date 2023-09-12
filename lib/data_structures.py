@@ -17,13 +17,20 @@ spicy_foods = [
 ]
 
 def get_names(spicy_foods):
-    pass
+    names = [food.get("name") for food in spicy_foods]
+    return names
 
 def get_spiciest_foods(spicy_foods):
-    pass
+     spicy = [food  for food in spicy_foods if food.get("heat_level") > 5]
+     return spicy
 
 def print_spicy_foods(spicy_foods):
-    pass
+    for food in spicy_foods:
+        name = food.get("name")
+        origin = food.get("cuisine")
+        number = food.get("heat_level")
+        chills = "🌶" * number
+        return(f"{name} ({origin}) | Heat Level: {chills}")
 
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):
     pass
@@ -36,3 +43,6 @@ def get_average_heat_level(spicy_foods):
 
 def create_spicy_food(spicy_foods, spicy_food):
     pass
+
+
+print_spicy_foods(spicy_foods)
